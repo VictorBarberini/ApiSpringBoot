@@ -6,8 +6,7 @@ create table produto (
 	descricao varchar(255),
 	valor decimal(19,2),
 	estoque_id bigint,
-	primary key (id),
-	foreign key (estoque_id) references estoque (id)
+	primary key (id)
 );
     
 create table estoque (
