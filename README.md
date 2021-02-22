@@ -1,5 +1,4 @@
-# Nome do Projeto 
-API Spring Boot - Cadastro de Produtos
+# API Spring Boot - Cadastro de Produtos
 
 # Indice
 * [Sobre](#Sobre)
