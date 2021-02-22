@@ -1,16 +1,17 @@
 create database Compasso_SpringBoot;
 use Compasso_SpringBoot;
 
+create table estoque (
+	id bigint not null auto_increment,
+	quantidade integer,
+	primary key (id)
+);
+
 create table produto (
 	id bigint not null auto_increment,
 	descricao varchar(255),
 	valor decimal(19,2),
 	estoque_id bigint,
-	primary key (id)
-);
-    
-create table estoque (
-	id bigint not null auto_increment,
-	quantidade integer,
-	primary key (id)
+	primary key (id),
+	foreign key (estoque_id) references estoque (id)
 );
