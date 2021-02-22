@@ -1,11 +1,10 @@
 package br.com.compasso.TrabalhoSpringBoot.controller.form;
 
 import java.math.BigDecimal;
-
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-
 import com.sun.istack.NotNull;
-
 import br.com.compasso.TrabalhoSpringBoot.modelo.Estoque;
 import br.com.compasso.TrabalhoSpringBoot.modelo.Produto;
 import br.com.compasso.TrabalhoSpringBoot.repository.EstoqueRepository;
@@ -15,9 +14,9 @@ public class AtualizarProdutoForm {
 
 	@NotNull @NotEmpty
 	private String descricao;
-	@NotNull
+	@NotNull @DecimalMin("0.00")
 	private BigDecimal valor;
-	@NotNull
+	@NotNull @Min(0)
 	private Integer quantidade;
 	
 	
@@ -49,6 +48,4 @@ public class AtualizarProdutoForm {
 		produto.setValor(this.valor);
 		return produto;
 	}
-	
-	
 }
